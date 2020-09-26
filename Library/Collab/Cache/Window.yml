@@ -35,10 +35,12 @@ MonoBehaviour:
     - Assets/Scripts/Audio System/sound01.cs.meta
     - Assets/Scripts/SKELETONSETUP.txt
     - Assets/Scripts/SKELETONSETUP.txt.meta
+    - Assets/Scripts/Transitions.meta
     - Assets/Scripts/Transitions/mainmenu.cs
     - Assets/Scripts/Transitions/mainmenu.cs.meta
     - Assets/Scripts/Transitions/transitioneffect.cs
     - Assets/Scripts/Transitions/transitioneffect.cs.meta
+    - Assets/Scripts/openingScene.meta
     - Assets/Scripts/openingScene/videoScript.cs
     - Assets/Scripts/openingScene/videoScript.cs.meta
     - Assets/Sprites/IMPOSSIBLEbutton.png
@@ -63,8 +65,8 @@ MonoBehaviour:
     - Assets/Video/snakeIntro.mp4.meta
     - ProjectSettings/EditorBuildSettings.asset
     - 
-    m_Values: 01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
-  RevisionSummary: "First Push \nDefault files for project setup"
+    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
