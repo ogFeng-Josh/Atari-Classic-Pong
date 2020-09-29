@@ -14,59 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Animations/Transitions.meta
-    - Assets/Animations/Transitions/Transition Elements.controller
-    - Assets/Animations/Transitions/Transition Elements.controller.meta
-    - Assets/Animations/Transitions/crossfade_end.anim
-    - Assets/Animations/Transitions/crossfade_end.anim.meta
-    - Assets/Animations/Transitions/crossfade_start.anim
-    - Assets/Animations/Transitions/crossfade_start.anim.meta
-    - Assets/Prefabs/Transition Elements.prefab
-    - Assets/Prefabs/Transition Elements.prefab.meta
     - Assets/Scenes/SP_arena.unity
-    - Assets/Scenes/_mainmenu.unity
-    - Assets/Scenes/_mainmenu.unity.meta
-    - Assets/Scenes/_openingScene.unity
-    - Assets/Scenes/_openingScene.unity.meta
-    - Assets/Scripts/Audio System.meta
-    - Assets/Scripts/Audio System/audioManager.cs
-    - Assets/Scripts/Audio System/audioManager.cs.meta
-    - Assets/Scripts/Audio System/sound01.cs
-    - Assets/Scripts/Audio System/sound01.cs.meta
-    - Assets/Scripts/SKELETONSETUP.txt
-    - Assets/Scripts/SKELETONSETUP.txt.meta
-    - Assets/Scripts/Transitions.meta
-    - Assets/Scripts/Transitions/mainmenu.cs
-    - Assets/Scripts/Transitions/mainmenu.cs.meta
-    - Assets/Scripts/Transitions/transitioneffect.cs
-    - Assets/Scripts/Transitions/transitioneffect.cs.meta
-    - Assets/Scripts/openingScene.meta
-    - Assets/Scripts/openingScene/videoScript.cs
-    - Assets/Scripts/openingScene/videoScript.cs.meta
-    - Assets/Sprites/IMPOSSIBLEbutton.png
-    - Assets/Sprites/INFINITEbutton.png
-    - Assets/Sprites/LOCALbutton.png
-    - Assets/Sprites/MEDIUMbutton.png
     - Assets/Sprites/MUSICOFFicon.png
     - Assets/Sprites/MUSICONicon.png
     - Assets/Sprites/P1score.png
     - Assets/Sprites/P2score.png
     - Assets/Sprites/PAUSEbutton.png
-    - Assets/Sprites/QUITbutton.png
-    - Assets/Sprites/SINGLEbutton.png
-    - Assets/Sprites/UPTO3button.png
-    - Assets/Sprites/UPTO5button.png
-    - Assets/Sprites/UPTO7button.png
-    - Assets/Sprites/iconBALL.png
-    - Assets/Sprites/icons(32)GREEN.png
-    - Assets/Sprites/icons(32)RED.png
-    - Assets/Video.meta
-    - Assets/Video/snakeIntro.mp4
-    - Assets/Video/snakeIntro.mp4.meta
-    - ProjectSettings/EditorBuildSettings.asset
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  RevisionSummary: 
+    m_Values: 0101010101010101
+  RevisionSummary: Arena Setup
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

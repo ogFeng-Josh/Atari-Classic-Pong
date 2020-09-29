@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ball
+  - boundary
+  - goals
+  - redGOAL
+  - greenGOAL
+  - Player2
   layers:
   - Default
   - TransparentFX

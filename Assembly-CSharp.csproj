@@ -36,11 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\openingScene\videoScript.cs" />
-     <Compile Include="Assets\Scripts\Audio System\audioManager.cs" />
-     <Compile Include="Assets\Scripts\Audio System\sound01.cs" />
-     <Compile Include="Assets\Scripts\Transitions\transitioneffect.cs" />
      <Compile Include="Assets\Scripts\Transitions\mainmenu.cs" />
+     <Compile Include="Assets\Scripts\Transitions\transitioneffect.cs" />
+     <Compile Include="Assets\Scripts\Audio System\sound01.cs" />
+     <Compile Include="Assets\Scripts\Audio System\audioManager.cs" />
+     <Compile Include="Assets\Scripts\openingScene\videoScript.cs" />
+     <Compile Include="Assets\Scripts\hoverButtons.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

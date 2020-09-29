@@ -72,11 +72,18 @@ public class mainmenu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("SP_arena");
+        Debug.Log("Map SP_arena loaded!");
+    }
+
+    public void difficulty()
+    {
+        //Set up difficulty by adding level indicated into a script manager for a difficulty system
     }
 
     public void Quit()
     {
         Application.Quit();
+        Debug.Log("Game has Quit!");
     }
 
 
