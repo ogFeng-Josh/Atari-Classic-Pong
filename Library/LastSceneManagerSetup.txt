@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SP_arena.unity
+- path: Assets/Scenes/_openingScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

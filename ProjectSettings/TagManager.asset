@@ -10,6 +10,12 @@ TagManager:
   - redGOAL
   - greenGOAL
   - Player2
+  - amnesia
+  - angel
+  - boost
+  - cluster
+  - decoy
+  - light
   layers:
   - Default
   - TransparentFX
@@ -46,4 +52,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: VFX(idle)
+    uniqueID: 3948092129
+    locked: 0
+  - name: AbilityIcon
+    uniqueID: 4191983059
     locked: 0
