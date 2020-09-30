@@ -51,6 +51,25 @@ MonoBehaviour:
     - Assets/Animations/Abilities/lighteningIDLE.anim.meta
     - Assets/Animations/Abilities/lighteningSPRITE.controller
     - Assets/Animations/Abilities/lighteningSPRITE.controller.meta
+    - Assets/Audio/Menu Theme.mp3
+    - Assets/Audio/Menu Theme.mp3.meta
+    - Assets/Audio/abilitypickup.wav
+    - Assets/Audio/abilitypickup.wav.meta
+    - Assets/Audio/abilitypickup2.wav
+    - Assets/Audio/abilitypickup2.wav.meta
+    - Assets/Audio/ballimpact.wav
+    - Assets/Audio/ballimpact.wav.meta
+    - Assets/Audio/boundary.wav
+    - Assets/Audio/boundary.wav.meta
+    - Assets/Audio/gameover.wav
+    - Assets/Audio/gameover.wav.meta
+    - Assets/Audio/score.wav
+    - Assets/Audio/score.wav.meta
+    - Assets/Audio/shottimer.wav
+    - Assets/Audio/shottimer.wav.meta
+    - Assets/Materials.meta
+    - Assets/Materials/ballPhysics.physicsMaterial2D
+    - Assets/Materials/ballPhysics.physicsMaterial2D.meta
     - Assets/Particles/Abilities VFX.meta
     - Assets/Particles/Abilities VFX/Materials.meta
     - Assets/Particles/Abilities VFX/Materials/FireSphere1.mat
@@ -113,16 +132,25 @@ MonoBehaviour:
     - Assets/Prefabs/Abilities/decoyAbility(VFX).prefab.meta
     - Assets/Prefabs/Abilities/lightening(VFX).prefab
     - Assets/Prefabs/Abilities/lightening(VFX).prefab.meta
+    - Assets/Prefabs/Static.meta
+    - Assets/Prefabs/Static/AudioManager.prefab
+    - Assets/Prefabs/Static/AudioManager.prefab.meta
     - Assets/Prefabs/Transitions.meta
     - Assets/Prefabs/Transitions/Transition Elements.prefab
     - Assets/Prefabs/Transitions/Transition Elements.prefab.meta
     - Assets/Scenes/SP_arena.unity
     - Assets/Scenes/_mainmenu.unity
+    - Assets/Scripts/Audio System/audioManager.cs
+    - Assets/Scripts/Audio System/menuTheme.cs
+    - Assets/Scripts/Audio System/menuTheme.cs.meta
+    - Assets/Scripts/Gameplay System.meta
+    - Assets/Scripts/Gameplay System/ballsystem.cs
+    - Assets/Scripts/Gameplay System/ballsystem.cs.meta
     - Assets/Sprites/HELPbutton.png
     - Assets/Sprites/HELPbutton.png.meta
     - ProjectSettings/TagManager.asset
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

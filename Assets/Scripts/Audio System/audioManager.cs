@@ -62,7 +62,7 @@ public class audioManager : MonoBehaviour
             return;
         }
         //Won't destroy when loading into next scene
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         //Setup for Audio Sources
         foreach(sound01 s in sounds)
