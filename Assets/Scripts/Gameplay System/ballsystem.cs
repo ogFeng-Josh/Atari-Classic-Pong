@@ -29,7 +29,10 @@ public class ballsystem : MonoBehaviour
     //float f1;
     //bool b1;
     
-    public bool outofplay = false;
+    //public GameObject ballPrefab; 
+    public ballmanager ballGM;
+    public GameMaster GM;
+    public GameObject goalExplosion;
 
     //[Space]
     #endregion
@@ -41,7 +44,8 @@ public class ballsystem : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        
+        ballGM = GameObject.FindObjectOfType<ballmanager>();
+        GM = GameObject.FindObjectOfType<GameMaster>();
     }
     
     private void Start()
@@ -52,11 +56,7 @@ public class ballsystem : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(outofplay == true)
-        {
-            rngSpawn();
-            outofplay = false;
-        }
+
     }
 
     private void FixedUpdate()
@@ -75,21 +75,6 @@ public class ballsystem : MonoBehaviour
         //Do Something()
     }
     */
-    public void rngSpawn()
-    {
-        int spawnpick = Random.Range (0, 2);
-
-        if(spawnpick == 0)
-        {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-5f, 0f);
-        }
-        else if(spawnpick == 1)
-        {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(5f, 0f);
-        }
-
-    }
-
 
     //[Space]
     #endregion
@@ -103,6 +88,64 @@ public class ballsystem : MonoBehaviour
         Do Something();
     }
     */
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        //Collision Detection for Sound Effects
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
+        {
+            FindObjectOfType<audioManager>().Play("Ball Impact");
+            
+            //===========================================================================================
+            //Diverts direction of ball to help simulate PONG game physics
+            float dist = this.transform.position.y - GameObject.Find("playerGREEN").transform.position.y;
+            float dist2 = this.transform.position.y - GameObject.Find("playerRED").transform.position.y;
+            
+            //Set boost ability in here. If ability active == true and player == that player who picked it up
+            //Add * 2f to 5f of X to move faster
+            if(collision.gameObject.name == "playerGREEN")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(ballGM.ballspeed, dist * 2f);
+            }
+            else if(collision.gameObject.name == "playerRED")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballGM.ballspeed, dist2 * 2f);
+            }
+            //===========================================================================================
+        }
+        else if(collision.gameObject.tag == "boundary")
+        {
+            FindObjectOfType<audioManager>().Play("Boundary Impact");
+        }
+        else if(collision.gameObject.tag == "redGOAL" || collision.gameObject.tag == "greenGOAL")
+        { 
+            //Spawn explosion
+            GameObject explosion = (GameObject)Instantiate(goalExplosion, transform.position, transform.rotation); 
+            
+            if(collision.gameObject.tag == "redGOAL")
+            {
+                //Debug.Log("Green Scored");
+                ballGM.greenPoint();
+                GM.greenScored();
+            }
+            else if(collision.gameObject.tag == "greenGOAL")
+            {
+                //Debug.Log("Red Scored");
+                ballGM.redPoint();
+                GM.redScored();
+            }
+
+            FindObjectOfType<audioManager>().Play("Score");
+            //Destroys assets
+            Destroy(gameObject);
+            Destroy(explosion, 1.0f);
+            //Instantiate explosion
+            //Change ball in play to opposite -
+            //Write level manager script to take this data in
+            //Then incorporate a timer countdown to spawn ball back in and
+            //Change this data back 
+        }
+    }
 
     //[Space]
     #endregion
