@@ -72,7 +72,7 @@ public class mainmenu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("SP_arena");
-        Debug.Log("Map SP_arena loaded!");
+        //Debug.Log("Map SP_arena loaded!");
     }
 
     public void difficulty()
