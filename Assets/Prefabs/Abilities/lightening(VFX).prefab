@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3639968632265264147}
   - component: {fileID: 3639968632265264144}
   - component: {fileID: 382117015682899979}
+  - component: {fileID: 340252263}
   m_Layer: 0
   m_Name: lighteningAbility
   m_TagString: Untagged
@@ -113,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -129,6 +130,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.81}
   m_EdgeRadius: 0
+--- !u!114 &340252263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639968632265264145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f403ac507c1bd4a859cd9ac91fcbb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballGM: {fileID: 0}
+  destructNow: {fileID: 0}
 --- !u!1 &3915016115256203822
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1693756272341095981}
+  - component: {fileID: -6719880037733983015}
   m_Layer: 0
   m_Name: lightening(VFX)
   m_TagString: light
@@ -161,6 +177,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6719880037733983015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915016115256203822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3536e62123362e42b9aa45d4093e5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7408090632300080005
 PrefabInstance:
   m_ObjectHideFlags: 0

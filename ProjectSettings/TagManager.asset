@@ -16,6 +16,7 @@ TagManager:
   - cluster
   - decoy
   - light
+  - PlayerAI
   layers:
   - Default
   - TransparentFX

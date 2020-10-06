@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118595230869106758}
+  - component: {fileID: -5477068622988734368}
   m_Layer: 0
   m_Name: amnesiaAbility(VFX)
   m_TagString: amnesia
@@ -32,6 +33,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5477068622988734368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118595230869106759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3536e62123362e42b9aa45d4093e5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2054786984672292243
 GameObject:
   m_ObjectHideFlags: 0
@@ -19295,6 +19308,7 @@ GameObject:
   - component: {fileID: 8998828068067804407}
   - component: {fileID: 8998828068067804392}
   - component: {fileID: 7260695220664925317}
+  - component: {fileID: 9190841046615201614}
   m_Layer: 0
   m_Name: amnesiaAbility
   m_TagString: Untagged
@@ -19396,7 +19410,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -19412,3 +19426,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.81}
   m_EdgeRadius: 0
+--- !u!114 &9190841046615201614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8998828068067804393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc2f2ebdc9606941b585a211c2f2c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballGM: {fileID: 0}
+  destructNow: {fileID: 0}

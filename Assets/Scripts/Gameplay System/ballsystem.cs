@@ -28,11 +28,16 @@ public class ballsystem : MonoBehaviour
     //string s1;
     //float f1;
     //bool b1;
-    
+    //Player Last Touched
+    //bool player1 = false;
+    //bool player2 = false;
+
     //public GameObject ballPrefab; 
     public ballmanager ballGM;
     public GameMaster GM;
     public GameObject goalExplosion;
+
+    //public Vector2 startingPosition = new Vector2 (7.0f, 0.0f);
 
     //[Space]
     #endregion
@@ -66,6 +71,7 @@ public class ballsystem : MonoBehaviour
     //[Space]
     #endregion
 
+
     //================================
 
     #region Methods:
@@ -92,7 +98,7 @@ public class ballsystem : MonoBehaviour
     {
 
         //Collision Detection for Sound Effects
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "PlayerAI")
         {
             FindObjectOfType<audioManager>().Play("Ball Impact");
             
@@ -100,15 +106,17 @@ public class ballsystem : MonoBehaviour
             //Diverts direction of ball to help simulate PONG game physics
             float dist = this.transform.position.y - GameObject.Find("playerGREEN").transform.position.y;
             float dist2 = this.transform.position.y - GameObject.Find("playerRED").transform.position.y;
-            
+
             //Set boost ability in here. If ability active == true and player == that player who picked it up
             //Add * 2f to 5f of X to move faster
             if(collision.gameObject.name == "playerGREEN")
             {
+                ballGM.playerGreen();
                 this.GetComponent<Rigidbody2D>().velocity = new Vector2(ballGM.ballspeed, dist * 2f);
             }
             else if(collision.gameObject.name == "playerRED")
             {
+                ballGM.playerRed();
                 this.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballGM.ballspeed, dist2 * 2f);
             }
             //===========================================================================================
@@ -136,10 +144,14 @@ public class ballsystem : MonoBehaviour
             }
 
             FindObjectOfType<audioManager>().Play("Score");
+
             //Destroys assets
             Destroy(gameObject);
-            Destroy(explosion, 1.0f);
+
             //Instantiate explosion
+            Destroy(explosion, 1.0f);
+            //transform.localPosition = (Vector3)startingPosition;
+
             //Change ball in play to opposite -
             //Write level manager script to take this data in
             //Then incorporate a timer countdown to spawn ball back in and
