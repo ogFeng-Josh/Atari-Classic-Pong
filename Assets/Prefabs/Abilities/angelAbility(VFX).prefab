@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 3794817778547555377}
   - component: {fileID: 3794817778547555376}
   - component: {fileID: 2912611885427469038}
+  - component: {fileID: 996176341}
   m_Layer: 0
   m_Name: angelAnimation
   m_TagString: Untagged
@@ -174,6 +175,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.81}
   m_EdgeRadius: 0
+--- !u!114 &996176341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3794817778547555379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8afd127fc4bf4740b2db1258e194632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballGM: {fileID: 0}
+  destructNow: {fileID: 0}
 --- !u!1001 &3794817777077807835
 PrefabInstance:
   m_ObjectHideFlags: 0

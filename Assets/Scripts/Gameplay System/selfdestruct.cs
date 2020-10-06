@@ -98,7 +98,7 @@ public class selfdestruct : MonoBehaviour
     //StartCoroutine(MethodName());
     IEnumerator destruct()
     {
-        yield return new WaitForSeconds(7.0f);
+        yield return new WaitForSeconds(10.0f);
         Destroy(gameObject);
     }
     

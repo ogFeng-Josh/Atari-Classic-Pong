@@ -157,11 +157,12 @@ public class ballmanager : MonoBehaviour
     public void boost()
     {
         StartCoroutine(boostTimer());
-        ballspeed += 4;
+        
     }
 
     public void distraction()
     {
+        StartCoroutine(distractionTimer());
         GameObject part1 = Instantiate(distractions[0], particleSpawner[0].transform.position, Quaternion.identity);
         GameObject part2 = Instantiate(distractions[0], particleSpawner[1].transform.position, Quaternion.identity);
         GameObject part3 = Instantiate(distractions[0], particleSpawner[2].transform.position, Quaternion.identity);
@@ -230,13 +231,20 @@ public class ballmanager : MonoBehaviour
     //StartCoroutine(MethodName());
     IEnumerator boostTimer()
     {
-        ballspeed += 4;
+        ballspeed += 5;
         Debug.Log("Increased speed");
         yield return new WaitForSeconds(13.0f);
-        ballspeed -= 4;
+        ballspeed -= 5;
         Debug.Log("Decreased speed");
     }
-    
+    IEnumerator distractionTimer()
+    {
+        ballspeed += 5;
+        Debug.Log("Increased speed");
+        yield return new WaitForSeconds(10.0f);
+        ballspeed -= 5;
+        Debug.Log("Decreased speed");
+    }
 
     //[Space]
     #endregion
