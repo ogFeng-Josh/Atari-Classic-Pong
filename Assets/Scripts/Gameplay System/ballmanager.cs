@@ -28,6 +28,8 @@ public class ballmanager : MonoBehaviour
     //string s1;
     //float f1;
     //bool b1;
+    //Ball in play
+    public int ballActive = 0;
 
     //Player Last Touched
     bool player1 = false;
@@ -45,11 +47,18 @@ public class ballmanager : MonoBehaviour
     public bool redscored = false;
     public bool greenscored = false;
 
+    public GameObject p1;
+    public GameObject p2;
+
+    public Vector2 p1Spawn = new Vector2(-7.0f, 0.0f);
+    public Vector2 p2Spawn = new Vector2(7.0f, 0.0f);
+
     //Respawn Process
     public bool outofplay = false;
     
     //Ball Prefab
     public GameObject ballPrefab;
+    public GameObject decoyPrefab;
 
     //Ball Data
     //public ballsystem balldata;
@@ -74,15 +83,15 @@ public class ballmanager : MonoBehaviour
         //Give countdown to RNG spawn
         rngSpawn();
 
-
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(outofplay == true)
+        if(outofplay == true && ballActive <= 0)
         {
             resetround();
+            //Destroy(ballPrefab);
         }
     }
 
@@ -106,18 +115,18 @@ public class ballmanager : MonoBehaviour
     {
         //Returns to center for proper spawn location (ADD INSTANTIATE PREFAB TO MAKE PROPER SPAWN )
         //Instantiate(ballPrefab, transform.position, Quaternion.identity);
-        ballPrefab.transform.position = new Vector3(0f, 0f, 0f);
-        Instantiate(ballPrefab, transform.position, Quaternion.identity);
+        //ballPrefab.transform.position = new Vector3(0f, 0f, 0f);
+        GameObject ballTemp = Instantiate(ballPrefab, transform.position, Quaternion.identity);
         
         int spawnpick = Random.Range (0, 2);
-
+        ++ballActive;
         if(spawnpick == 0)
         {
-            ballPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed, 0f);
+            ballTemp.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed, 0f);
         }
         else if(spawnpick == 1)
         {
-            ballPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed, 0f);
+            ballTemp.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed, 0f);
         }
 
     }
@@ -125,19 +134,27 @@ public class ballmanager : MonoBehaviour
     public void resetround()
     {
         outofplay = false;
-        ballPrefab.transform.position = new Vector3(0f, 0f, 0f);
-        Instantiate(ballPrefab, transform.position, Quaternion.identity);
+        ++ballActive;
+        //ballTemp2.transform.position = new Vector3(0f, 0f, 0f);
+        p1.transform.position = p1Spawn;
+        p2.transform.position = p2Spawn;
+        GameObject ballTemp2 = Instantiate(ballPrefab, transform.position, Quaternion.identity);
+        ballTemp2.transform.position = new Vector3(0f, 0f, 0f);
         //transform.localPosition = (Vector3)startingPosition;
+
+        //StartCoroutine(spawnTimer());
 
         if(greenscored == true)
         {
             greenscored = false;
-            ballPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed, 0f);
+            //StartCoroutine(spawnTimer());
+            ballTemp2.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed, 0f);
         }
         else if(redscored == true)
         {
             redscored = false;
-            ballPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed, 0f);
+            //StartCoroutine(spawnRed());
+            ballTemp2.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed, 0f);
         }
 
     }
@@ -158,6 +175,15 @@ public class ballmanager : MonoBehaviour
     {
         StartCoroutine(boostTimer());
         
+    }
+
+    public void upCount()
+    {
+        ++ballActive;
+    }
+    public void deductCount()
+    {
+        --ballActive;
     }
 
     public void distraction()
@@ -208,6 +234,45 @@ public class ballmanager : MonoBehaviour
         //Debug.Log("Player2 is " + player2);
     }
 
+    public void cluster()
+    {
+        if(player1 == true)
+        {
+            ballActive += 2;
+            GameObject ballTemp = Instantiate(ballPrefab, transform.position, Quaternion.identity);
+            GameObject ballTemp2 = Instantiate(ballPrefab, transform.position, Quaternion.identity);
+            ballTemp.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed - 5, 0f);
+            ballTemp2.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed - 7, 0f);
+        }
+        else if(player2 == true)
+        {
+            ballActive += 2;
+            GameObject ballTemp = Instantiate(ballPrefab, transform.position, Quaternion.identity);
+            GameObject ballTemp2 = Instantiate(ballPrefab, transform.position, Quaternion.identity);
+            ballTemp.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed + 5, 0f);
+            ballTemp2.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed + 7, 0f);
+        }
+        
+    }
+    public void decoy()
+    {
+        if(player1 == true)
+        {
+            GameObject ballTemp = Instantiate(decoyPrefab, transform.position, Quaternion.identity);
+            GameObject ballTemp2 = Instantiate(decoyPrefab, transform.position, Quaternion.identity);
+            ballTemp.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed - 5, 0f);
+            ballTemp2.GetComponent<Rigidbody2D>().velocity = new Vector2(ballspeed - 7, 0f);
+        }
+        else if(player2 == true)
+        {
+            GameObject ballTemp = Instantiate(decoyPrefab, transform.position, Quaternion.identity);
+            GameObject ballTemp2 = Instantiate(decoyPrefab, transform.position, Quaternion.identity);
+            ballTemp.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed + 5, 0f);
+            ballTemp2.GetComponent<Rigidbody2D>().velocity = new Vector2(-ballspeed + 7, 0f);
+        }
+        
+    }
+
     //[Space]
     #endregion
 
@@ -220,6 +285,7 @@ public class ballmanager : MonoBehaviour
         Do Something();
     }
     */
+
 
     //[Space]
     #endregion
@@ -244,6 +310,11 @@ public class ballmanager : MonoBehaviour
         yield return new WaitForSeconds(10.0f);
         ballspeed -= 5;
         Debug.Log("Decreased speed");
+    }
+
+    IEnumerator spawnRed()
+    {
+        yield return new WaitForSeconds(3.0f);
     }
 
     //[Space]

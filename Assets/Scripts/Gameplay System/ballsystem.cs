@@ -33,8 +33,8 @@ public class ballsystem : MonoBehaviour
     //bool player2 = false;
 
     //public GameObject ballPrefab; 
-    public ballmanager ballGM;
-    public GameMaster GM;
+    private ballmanager ballGM;
+    private GameMaster GM;
     public GameObject goalExplosion;
 
     //public Vector2 startingPosition = new Vector2 (7.0f, 0.0f);
@@ -145,6 +145,7 @@ public class ballsystem : MonoBehaviour
 
             FindObjectOfType<audioManager>().Play("Score");
 
+            ballGM.deductCount();
             //Destroys assets
             Destroy(gameObject);
 

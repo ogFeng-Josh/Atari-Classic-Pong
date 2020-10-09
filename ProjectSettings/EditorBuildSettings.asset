@@ -12,6 +12,27 @@ EditorBuildSettings:
     path: Assets/Scenes/_mainmenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/SP_arena.unity
-    guid: 060a25b33c17bf54d933b41874064ba3
+    path: Assets/Scenes/local/lc_arena3.unity
+    guid: 67c433f5044fec74880eae3c80206a47
+  - enabled: 1
+    path: Assets/Scenes/local/lc_arena5.unity
+    guid: 716ddbf6ba39e6d4aa7cdb45bf574f61
+  - enabled: 1
+    path: Assets/Scenes/local/lc_arena7.unity
+    guid: 14359fc6dd099ab49a6ba719348c7a74
+  - enabled: 1
+    path: Assets/Scenes/local/lc_arenaINF.unity
+    guid: aa56b2282433e7f4fbb5e12165a2a068
+  - enabled: 1
+    path: Assets/Scenes/Impossible/SP_arenaIMP.unity
+    guid: 0db95051b66b3c44a930a89541d22699
+  - enabled: 1
+    path: Assets/Scenes/Impossible/SP_arenaIMP2.unity
+    guid: 2edc6406a6897004983195d6079bac2e
+  - enabled: 1
+    path: Assets/Scenes/Impossible/SP_arenaIMP3.unity
+    guid: b54d09d5bc99c054a9323075ff6f8900
+  - enabled: 1
+    path: Assets/Scenes/Impossible/SP_arenaIMP4.unity
+    guid: 6162dbd8063bf364581b412ffb69c087
   m_configObjects: {}

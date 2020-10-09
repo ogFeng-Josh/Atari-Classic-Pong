@@ -69,9 +69,45 @@ public class mainmenu : MonoBehaviour
         //Do Something()
     }
     */
-    public void Play()
+    public void solo1()
     {
-        SceneManager.LoadScene("SP_arena");
+        SceneManager.LoadScene("SP_arenaIMP");
+        //Debug.Log("Map SP_arena loaded!");
+    }
+    public void solo2()
+    {
+        SceneManager.LoadScene("SP_arenaIMP2");
+        //Debug.Log("Map SP_arena loaded!");
+    }
+    public void solo3()
+    {
+        SceneManager.LoadScene("SP_arenaIMP3");
+        //Debug.Log("Map SP_arena loaded!");
+    }
+    public void solo4()
+    {
+        SceneManager.LoadScene("SP_arenaIMP4");
+        //Debug.Log("Map SP_arena loaded!");
+    }
+
+    public void local3()
+    {
+        SceneManager.LoadScene("lc_arena3");
+        //Debug.Log("Map SP_arena loaded!");
+    }
+    public void local5()
+    {
+        SceneManager.LoadScene("lc_arena5");
+        //Debug.Log("Map SP_arena loaded!");
+    }
+    public void local7()
+    {
+        SceneManager.LoadScene("lc_arena7");
+        //Debug.Log("Map SP_arena loaded!");
+    }
+    public void localUnlimited()
+    {
+        SceneManager.LoadScene("lc_arenaINF");
         //Debug.Log("Map SP_arena loaded!");
     }
 

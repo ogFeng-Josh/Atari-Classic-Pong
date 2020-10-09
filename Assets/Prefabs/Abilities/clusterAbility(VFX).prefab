@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 8350154189534257451}
   - component: {fileID: 8350154189534257444}
   - component: {fileID: 7794437614341227349}
+  - component: {fileID: 1876019576}
   m_Layer: 0
   m_Name: clusterAbility
   m_TagString: Untagged
@@ -174,6 +175,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.81}
   m_EdgeRadius: 0
+--- !u!114 &1876019576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350154189534257445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917e0bf27b9bed44e99ab31bc7750c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballObject: {fileID: 6581766293719250537, guid: 5ec5067e1efe374409eb6a28e00dc306, type: 3}
+  bm: {fileID: 0}
+  destructNow: {fileID: 0}
 --- !u!1001 &4192675389721913887
 PrefabInstance:
   m_ObjectHideFlags: 0

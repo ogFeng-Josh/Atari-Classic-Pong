@@ -36,10 +36,12 @@ public class GameMaster : MonoBehaviour
     //bool b1;
 
     //Max score set by player
-    public int maxScore1 = 3;
-    public int maxScore2 = 5;
-    public int maxScore3 = 7;
-    public int setLimit = 2;
+    public int maxScore1 = 2;
+    public int maxScore2 = 4;
+    public int maxScore3 = 6;
+    public double maxScore = double.PositiveInfinity;
+
+    public int setLimit;
 
     //Player score 
     public int p1Score = 0;
@@ -49,7 +51,7 @@ public class GameMaster : MonoBehaviour
     public TextMeshProUGUI p2Display; 
 
     //Game Over System
-    public bool gameover = false;
+    //public bool gameover = false;
     public GameObject winScreen;
     
     //[Space]
@@ -68,18 +70,19 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         //DeclaredVariable = GameObject.Find("gameObjectName").GetComponent<ComponentName>();
+        
         p1Score = 0;
         p2Score = 0;
-        gameover = false;
+        //gameover = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(gameover == true)
-        {
-            gameOver();
-        }
+        //if(gameover == true)
+        //{
+        //    gameOver();
+        //}
     }
 
     private void FixedUpdate()
@@ -102,31 +105,36 @@ public class GameMaster : MonoBehaviour
     {
         if(p1Score < setLimit)
         {   
-            p1Score++;
+            //Debug.Log("Tally score!");
+            p1Score += 1;
             p1Display.text = p1Score.ToString();
         }
-        else
+        else if (p1Score == setLimit)
         {
             //Green Wins Display!
-            gameover = true;
+            //Debug.Log("game stop");
+            gameOver();
         }
     }
     public void redScored()
     {
         if(p2Score < setLimit)
         {   
-            p2Score++;
+            //Debug.Log("Tally score!");
+            p2Score += 1;
             p2Display.text = p2Score.ToString();
         }
-        else
+        else if(p2Score == setLimit)
         {
             //Red Wins Display!
-            gameover = true;
+            //Debug.Log("game stop");
+            gameOver();
         }
     }
 
     public void gameOver()
     {
+        //Debug.Log("Game is Over!");
         winScreen.SetActive(true);
         Time.timeScale = 0.0f;
     }
