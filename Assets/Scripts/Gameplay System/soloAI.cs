@@ -53,6 +53,7 @@ public class soloAI : MonoBehaviour
     private void Start()
     {
         //DeclaredVariable = GameObject.Find("gameObjectName").GetComponent<ComponentName>();
+        //ball = GameObject.FindGameObjectWithTag("ball");
         spawn();
         
     }
@@ -60,6 +61,9 @@ public class soloAI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(!ball)
+            ball = GameObject.FindGameObjectWithTag("ball");
+            
         locateBall();
     }
 
@@ -87,6 +91,9 @@ public class soloAI : MonoBehaviour
         //if(ball.GetComponent<ballsystem>().ballDirection == Vector2.right)
         //{
             ballPosition = ball.transform.localPosition;
+
+        if(!ball)
+            ball = GameObject.FindGameObjectWithTag("ball");
 
             if(transform.localPosition.y > bottomBounds && ballPosition.y < transform.localPosition.y)
             {
@@ -131,6 +138,13 @@ public class soloAI : MonoBehaviour
         yield return new WaitForSeconds(#f);
     }
     */
+    //StartCoroutine(MethodName());
+    IEnumerator reset()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ball = GameObject.FindGameObjectWithTag("ball");
+
+    }
 
     //[Space]
     #endregion
